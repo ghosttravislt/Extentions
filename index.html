@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo-cont">
+          <img
+            class="logo"
+            src="./browser-extensions-manager-ui-main/browser-extensions-manager-ui-main/assets/images/logo.svg"
+            alt="Extensions"
+          />
+          <button class="btn">
+            <img
+              src="./browser-extensions-manager-ui-main/browser-extensions-manager-ui-main/assets/images/icon-moon.svg"
+              alt="darkmode"
+              class="symbol"
+            />
+          </button>
+        </div>
+      </header>
+
+      <section class="filters">
+        <h2>Extensions List</h2>
+        <div class="filter-buttons">
+          <button class="active">All</button>
+          <button>Active</button>
+          <button>Inactive</button>
+        </div>
+      </section>
+
+      <div class="loader"></div>
+      <main class="extensions-grid">
+        <!-- Example Extension Card -->
+        <!-- <div class="extension-card">
+          <div class="card-header">
+            <div class="icon"></div>
+            <h3>DevLens</h3>
+          </div>
+          <p>Quickly inspect page layouts and visualize element boundaries.</p>
+          <div class="card-footer">
+            <button class="remove">Remove</button>
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div> -->
+
+        <!-- Repeat Extension Cards -->
+        <!-- (You can repeat this div with appropriate text/icons for each extension) -->
+      </main>
+    </div>
+  </body>
+  <script src="./data.js"></script>
+  <script src="./main.js"></script>
+</html>
