@@ -1,19 +1,10 @@
 const darkMode = document.querySelector(".btn");
 const body = document.getElementsByTagName("body");
 const sym = document.querySelector(".symbol");
+const title = document.querySelector(".title");
 const symURL = {
   url1: "./browser-extensions-manager-ui-main/browser-extensions-manager-ui-main/assets/images/icon-sun.svg",
   url2: "./browser-extensions-manager-ui-main/browser-extensions-manager-ui-main/assets/images/icon-moon.svg",
-};
-
-const modeAnimation = [
-  { transform: "rotate(0) scale(1)" },
-  { transform: "rotate(360deg) scale(0)" },
-];
-
-const modeTiming = {
-  duration: 6000,
-  iterations: 5,
 };
 
 function modeFunction() {
@@ -21,6 +12,7 @@ function modeFunction() {
     "linear-gradient(180deg, #040918 0%, #091540 100%)";
   sym.src = symURL.url1;
   darkMode.style.background = "hsl(226, 25%, 17%)";
+  title.style.color = "#fff";
 }
 
 let toggleSate = true;
