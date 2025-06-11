@@ -24,7 +24,7 @@ darkMode.addEventListener("click", () => {
       "linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%)";
     sym.src = symURL.url2;
     darkMode.style.background = "#ccc";
-    title.style.color = "#000";
+    title.style.color = "black";
   }
   toggleSate = !toggleSate;
   console.log(toggleSate);
