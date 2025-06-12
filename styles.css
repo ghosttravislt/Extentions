@@ -219,4 +219,14 @@ input:checked + .slider:before {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
   }
+
+  .loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    animation: l14 4s infinite;
+    top: 320px;
+    left: 150px;
+    position: absolute;
+  }
 }
