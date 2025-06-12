@@ -2,33 +2,11 @@ const darkMode = document.querySelector(".btn");
 const body = document.getElementsByTagName("body");
 const sym = document.querySelector(".symbol");
 const title = document.querySelector(".title");
+
 const symURL = {
   url1: "./browser-extensions-manager-ui-main/browser-extensions-manager-ui-main/assets/images/icon-sun.svg",
   url2: "./browser-extensions-manager-ui-main/browser-extensions-manager-ui-main/assets/images/icon-moon.svg",
 };
-
-function modeFunction() {
-  body[0].style.background =
-    "linear-gradient(180deg, #040918 0%, #091540 100%)";
-  sym.src = symURL.url1;
-  darkMode.style.background = "hsl(226, 25%, 17%)";
-  title.style.color = "#fff";
-}
-
-let toggleSate = true;
-darkMode.addEventListener("click", () => {
-  if (toggleSate) {
-    modeFunction();
-  } else if (!toggleSate) {
-    body[0].style.background =
-      "linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%)";
-    sym.src = symURL.url2;
-    darkMode.style.background = "#ccc";
-    title.style.color = "black";
-  }
-  toggleSate = !toggleSate;
-  console.log(toggleSate);
-});
 
 async function getData(url) {
   let fetchData = new Promise((resolve, reject) => {
@@ -54,8 +32,6 @@ async function getData(url) {
   // console.log(fetced);
 
   let card = document.querySelector(".extensions-grid");
-  const cards = document.querySelectorAll(".extension-card");
-  console.log(cards);
 
   function printData() {
     let displayCard = "";
@@ -81,6 +57,7 @@ async function getData(url) {
     }
 
     card.innerHTML = displayCard;
+    console.log(card);
   }
 
   printData();
@@ -88,8 +65,45 @@ async function getData(url) {
 
 getData(
   "./browser-extensions-manager-ui-main/browser-extensions-manager-ui-main/data.json"
-).then(() => {
-  // handling loader animation
-  const loader = document.querySelector(".loader");
-  loader.style.display = "none";
-});
+)
+  .then(() => {
+    // handling loader animation
+    const loader = document.querySelector(".loader");
+    loader.style.display = "none";
+  })
+
+  .then(() => {
+    //  handling darkmode
+    function modeFunction() {
+      const miniCard = document.querySelectorAll(".extension-card");
+      body[0].style.background =
+        "linear-gradient(180deg, #040918 0%, #091540 100%)";
+      sym.src = symURL.url1;
+      darkMode.style.background = "hsl(226, 25%, 17%)";
+      title.style.color = "#fff";
+      for (const cards of miniCard) {
+        cards.style.backgroundColor = "hsl(226, 25%, 17%)";
+        cards.style.color = "#fff";
+      }
+    }
+
+    let toggleSate = true;
+    darkMode.addEventListener("click", () => {
+      const miniCard = document.querySelectorAll(".extension-card");
+      if (toggleSate) {
+        modeFunction();
+      } else if (!toggleSate) {
+        body[0].style.background =
+          "linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%)";
+        sym.src = symURL.url2;
+        darkMode.style.background = "#ccc";
+        title.style.color = "black";
+        for (const cards of miniCard) {
+          cards.style.backgroundColor = "#fff";
+          cards.style.color = "#000";
+        }
+      }
+      toggleSate = !toggleSate;
+      console.log(toggleSate);
+    });
+  });

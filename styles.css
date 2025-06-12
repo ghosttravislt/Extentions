@@ -78,21 +78,6 @@ header .search button {
   font-size: 1.5rem;
 }
 
-.filter-buttons button {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 8px 16px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.filter-buttons button.active {
-  background: #f44336;
-  color: #fff;
-  border-color: #f44336;
-}
-
 .extensions-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

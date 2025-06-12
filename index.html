@@ -29,28 +29,30 @@
         <h2 class="title">Extensions List</h2>
         <div class="filter-buttons">
           <button class="active">All</button>
-          <button>Active</button>
-          <button>Inactive</button>
+          <button class="btn2">Active</button>
+          <button class="btn3">Inactive</button>
         </div>
       </section>
 
       <div class="loader"></div>
-      <main class="extensions-grid">
+      <main class="extensions-grid" hidden>
         <!-- Example Extension Card -->
-        <!-- <div class="extension-card">
-          <div class="card-header">
-            <div class="icon"></div>
-            <h3>DevLens</h3>
+        <div class="extension-card" style="visibility: hidden">
+          <div class="card-header" hidden>
+            <div class="icon" hidden></div>
+            <h3 hidden>DevLens</h3>
           </div>
-          <p>Quickly inspect page layouts and visualize element boundaries.</p>
-          <div class="card-footer">
-            <button class="remove">Remove</button>
-            <label class="switch">
-              <input type="checkbox" checked />
-              <span class="slider"></span>
+          <p hidden>
+            Quickly inspect page layouts and visualize element boundaries.
+          </p>
+          <div class="card-footer" hidden>
+            <button class="remove" hidden>Remove</button>
+            <label class="switch" hidden>
+              <input type="checkbox" checked hidden />
+              <span class="slider" hidden></span>
             </label>
           </div>
-        </div> -->
+        </div>
 
         <!-- Repeat Extension Cards -->
         <!-- (You can repeat this div with appropriate text/icons for each extension) -->
